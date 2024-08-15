@@ -75,6 +75,21 @@ Copy the contents of the output to your clipboard.
 9. Enter private key directly.
 
 
+# Generating SSH keys for jenkins user
+```groovy{
+su - jenkins
+```
+
+```groovy{
+ssh-keygen -o -t rsa -C "your@git-email.com"
+```
+
+```groovy{
+cat ~/.ssh/id_rsa.pub
+```
+
+
+
 
 
 
