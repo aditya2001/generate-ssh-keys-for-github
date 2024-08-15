@@ -6,14 +6,17 @@ You might already have an SSH key pair on your machine. You can check to see if 
 
 ## Generate SSH keys
 #### Windows Power shell-
-
+  ```groovy,
 $ cd ~/.ssh
 $ ls
+ ```
 
 1. If you see id_rsa.pub, you already have a key pair and don't need to create a new one.
 
 2. If you don't see id_rsa.pub, use the following command to generate a new key pair.
+   ```groovy
     $ ssh-keygen -o -t rsa -C "your@email.com"
+   ```
 (The -o option was added in 2014; if this command fails for you, just remove the -o and try again)
 
 3. When asked where to save the new key, hit enter to accept the default location.
@@ -46,8 +49,10 @@ The key's randomart image is:
 ```
 ## Add your public key to GitHub
 We now need to tell GitHub about your public key. Display the contents of your new public key file with cat:
-
+ 
+  ```groovy,
 $ cat ~/.ssh/id_rsa.pub
+ ```
 The output should look something like this:
 
 
@@ -55,6 +60,19 @@ The output should look something like this:
 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA879BJGYlPTLIuc9/R5MYiN4yc/YiCLcdBpSdzgK9Dt0Bkfe3rSz5cPm4wmehdE7GkVFXrBJ2YHqPLuM1yx1AUxIebpwlIl9f/aUHOts9eVnVh4NztPy0iSU/Sv0b2ODQQvcy2vYcujlorscl8JjAgfWsO3W4iGEe6QwBpVomcME8IU35v5VbylM9ORQa6wvZMVrPECBvwItTY8cPWH3MGZiK/74eHbSLKA4PY3gM4GHI450Nie16yggEg2aTQfWA1rry9JYWEoHS9pJ1dnLqZU3k/8OWgqJrilwSoC5rGjgp93iu0H8T6+mEHGRQe84Nk1y5lESSWIbn6P636Bl3uQ== your@email.com
 Copy the contents of the output to your clipboard.
 ```
+
+
+## Go to Github.com
+
+1. Go to Manage Jenkins.
+2. Click on Credentials.
+3. Click on System.
+4. Now click on Global Credentials.
+5. Click on + Add Credentials.
+6. Select kind value as "SSH Username with private keys"
+7. Enter ID as ssh-keys or something.   
+8. Enter username as your github username.
+9. Enter private key directly.
 
 
 
